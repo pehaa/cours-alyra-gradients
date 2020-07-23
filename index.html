@@ -10,23 +10,18 @@
       integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
       crossorigin="anonymous"
     />
-    <style>
-      .card-gradient {
-        height: 8rem;
-        width: 8rem;
-      }
-      pre {
-        padding: 0;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      console.log(document.body)
+    </script>
   </head>
   <body>
-    <header class="text-center bg-dark text-white py-5 mb-5">
+    <header id="header" class="text-center bg-dark text-white py-5 mb-5">
       <h1 class="display-1">Alyra Gradients</h1>
       <p>
         Ultime collection de plus beaux dégradés
       </p>
-      <button type="button" class="btn btn-outline-light">
+      <button id="header-button" type="button" class="btn btn-outline-light">
         <svg
           width="1em"
           height="1em"
@@ -58,8 +53,11 @@
           >
         </select>
       </div>
-      <div id="insert"></div>
+      <div id="grid-container"></div>
     </main>
+    <script>
+      console.log(document.body)
+    </script>
     <script src="js/gradients.js"></script>
     <script src="js/script.js"></script>
   </body>

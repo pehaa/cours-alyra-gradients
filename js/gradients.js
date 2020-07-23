@@ -111,7 +111,7 @@ const gradients = [
     name: "Nepal",
     start: "rgb(222, 97, 97)",
     end: "rgb(38, 87, 235)",
-    tags: ["marron", "mauve", "violet", "bleu"],
+    tags: ["mauve", "violet", "bleu"],
   },
   {
     name: "Dance To Forget",
@@ -123,7 +123,7 @@ const gradients = [
     name: "Moonrise",
     start: "rgb(218, 226, 248)",
     end: "rgb(214, 164, 164)",
-    tags: ["gris", "pink"],
+    tags: ["gris", "rose"],
   },
   {
     name: "YouTube",
