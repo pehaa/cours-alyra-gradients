@@ -64,7 +64,7 @@ function generateHeaderBg() {
   const random = Math.floor(gradients.length * Math.random())
   const randomGradient = gradients[random]
   const bgStyle = `background-image: linear-gradient(to right, ${randomGradient.start}, ${randomGradient.end});`
-  pageHeader.setAttribute("style", bgStyle)
+  pageHeader.style = bgStyle
 }
 
 function activateSelectByTag() {
@@ -73,7 +73,7 @@ function activateSelectByTag() {
   for (let tag of tags) {
     const option = document.createElement("option")
     option.textContent = tag
-    option.setAttribute("value", tag)
+    option.value = tag
     select.appendChild(option)
   }
   select.addEventListener("change", function (event) {
