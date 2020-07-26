@@ -7,11 +7,12 @@ introParagraph <- element du document avec l'id intro
 gridContainer <- element du document avec l'id grid-container
 pageHeader -> element du document avec l'id header
 switchGradientButton -> element du document avec l'id header-button
+tagFilter -> par quoi on filtre des gradients (par défaut "toutes les couleurs")
 */
 
-const introParagraph = document.getElementById("intro")
-const gridContainer = document.getElementById("grid-container")
-const pageHeader = document.getElementById("header")
+const introEl = document.getElementById("intro")
+const gridEl = document.getElementById("grid-container")
+const headerEl = document.getElementById("page-header")
 const switchGradientButton = document.getElementById("header-button")
 let tagFilter = "toutes les couleurs"
 
@@ -38,14 +39,14 @@ function createLi(el) {
   <div class="card p-3 mb-3 shadow">
     <div class="card-gradient rounded-pill mx-auto mb-4" style="${bgStyle}"></div>
     <h2 class="h5 text-center">${el.name}</h2>
-    <code ><pre class="py-3">${bgStyle}</pre></code>
+    <code>${bgStyle}</code>
   </div>`
   return li
 }
 
-function insertGradients(gradients) {
-  const ulElement = document.createElement("ul")
-  ulElement.classList.add("row", "list-unstyled")
+function insertGradients() {
+  const ulEl = document.createElement("ul")
+  ulEl.classList.add("row", "list-unstyled")
   const filteredGradients = gradients.filter((el) => {
     if (tagFilter === "toutes les couleurs") {
       return true
@@ -54,17 +55,19 @@ function insertGradients(gradients) {
   })
   for (let gradient of filteredGradients) {
     const li = createLi(gradient)
-    ulElement.appendChild(li)
+    ulEl.append(li)
   }
-  gridContainer.innerHTML = ""
-  gridContainer.appendChild(ulElement)
+  gridEl.innerHTML = ""
+  gridEl.append(ulEl)
 }
 
-function generateHeaderBg() {
-  const random = Math.floor(gradients.length * Math.random())
-  const randomGradient = gradients[random]
-  const bgStyle = `background-image: linear-gradient(to right, ${randomGradient.start}, ${randomGradient.end});`
-  pageHeader.style = bgStyle
+function addRandomGradientBg() {
+  if (headerEl) {
+    const random = Math.floor(gradients.length * Math.random())
+    const randomGradient = gradients[random]
+    const bgImage = `linear-gradient(to right, ${randomGradient.start}, ${randomGradient.end})`
+    headerEl.style.background = bgImage
+  }
 }
 
 function activateSelectByTag() {
@@ -74,28 +77,28 @@ function activateSelectByTag() {
     const option = document.createElement("option")
     option.textContent = tag
     option.value = tag
-    select.appendChild(option)
+    select.append(option)
   }
   select.addEventListener("change", function (event) {
     tagFilter = event.target.value
-    insertGradients(gradients)
+    insertGradients(event.target.value)
   })
 }
 
 // app
 
 /* inserer l'information : Voici une collection de ... dégradés prêts à utiliser dans vos feuilles de styles */
-if (introParagraph) {
-  introParagraph.textContent = `Voici une collection de ${gradients.length} dégradés prêts à utiliser dans vos feuilles de styles`
+if (introEl) {
+  introEl.textContent = `Voici une collection de ${gradients.length} dégradés prêts à utiliser dans vos feuilles de styles`
 }
 /* choisir un dégradé (random) et l'appliquer en tant que background image dans
 l'élément header */
-generateHeaderBg()
+addRandomGradientBg()
 /* click sur le bouton change le dégradé dans le header */
 if (switchGradientButton) {
-  switchGradientButton.addEventListener("click", generateHeaderBg)
+  switchGradientButton.addEventListener("click", addRandomGradientBg)
 }
 /* inserer la grille des dégradés */
-insertGradients(gradients)
+insertGradients()
 /* activer le select by tag */
 activateSelectByTag()
