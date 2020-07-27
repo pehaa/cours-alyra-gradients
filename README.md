@@ -47,7 +47,7 @@ Nous allons créer avec JavaScipt une structure html comme ceci :
 ```html
 <ul class="row list-unstyled">
   <li class="col-sm-6 col-md-4 col-lg-3">
-    <div class="card p-3 mb-3 shadow">
+    <div class="card p-3 mb-4 shadow">
       <div class="card-gradient rounded-pill mx-auto mb-4" style="..."></div>
       <h2 class="h5 text-center">...</h2>
       <code>...</code>
