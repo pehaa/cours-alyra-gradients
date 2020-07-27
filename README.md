@@ -28,7 +28,7 @@ addRandomGradientBg() // execute la fontion une fois quand le script charge
 switchGradientButton.addEventListener("click", addRandomGradientBg) // execute la fonction en click
 ```
 
-3. Insérer les dégradés dans la page
+3. Insérer la grille des dégradés dans la page
 
 Nous allons créer avec JavaScipt une structure html comme ceci :
 
@@ -64,7 +64,7 @@ Méthodes à utiliser :
 - `el.innerHTML`
 - `el.appendChild(childEl)`
 
-4.
+4. Activer l'élément select
 
 ```javascript
 // tagFilter <- variable égale a tag par lequel on va filter
