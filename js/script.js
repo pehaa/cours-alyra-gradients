@@ -80,8 +80,8 @@ function activateSelectByTag() {
     select.append(option)
   }
   select.addEventListener("change", function (event) {
-    tagFilter = event.target.value
-    insertGradients(event.target.value)
+    tagFilter = event.currentTarget.value
+    insertGradients()
   })
 }
 

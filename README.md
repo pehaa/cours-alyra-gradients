@@ -74,21 +74,11 @@ function activateSelectByTag() {
   // parcourir la liste des tags (for of)
   //    crée un élément option
   //    avec le texte qui est égale au tag
-  //    avec la valeur de "value" égale au tag
+  //    avec la valeur de "value" égale au tag (event.currentTarget.value)
   //    attache l'option à la fin de selectEl
   // selectEl devrait réagir à l'action de utilisateur qui choisi une nouvelle valeur (change)
   // affecter la value d'option choisi par utilisateur à tagFilter
-  // réinserer les Gradients
-  for (let tag of tags)
-    const option = document.createElement("option")
-    option.textContent = tag
-    option.value = tag
-    select.appendChild(option)
-  }
-  selectEl.addEventListener("change", function (event) {
-    tagFilter = event.target.value
-    insertGradients()
-  })
+  // appelle insertGradients() pour réinserer les gradients
 }
 ```
 
