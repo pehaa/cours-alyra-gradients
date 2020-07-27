@@ -1,7 +1,8 @@
 # Alyra Gradients
 
-1. Insérer l'information
-   Voici une collection de ... dégradés prêts à utiliser dans vos feuilles de styles
+## 1. Insérer l'information
+
+Voici une collection de ... dégradés prêts à utiliser dans vos feuilles de styles
 
 ```javascript
 // introEl <- element du dom avec l'id intro
@@ -11,8 +12,14 @@
 
 Et si on voulait afficher `Voici une collection de <b>${gradients.length}</b> dégradés prêts à utiliser dans vos feuilles de styles` ?
 
-2. Le background de header utilise un des dégradés de l'array `gradients`.
-   Ceci change en click.
+### Méthodes à utiliser :
+
+- `document.getElementbyId()` ou `document.querySelector()`
+- `el.textContent` ou `el.innerHTML`
+
+## 2. Le background de header utilise un des dégradés de l'array `gradients`.
+
+Ceci change en click.
 
 ```javascript
 // headerEl <- element du dom avec l'id
@@ -28,7 +35,12 @@ addRandomGradientBg() // execute la fontion une fois quand le script charge
 switchGradientButton.addEventListener("click", addRandomGradientBg) // execute la fonction en click
 ```
 
-3. Insérer la grille des dégradés dans la page
+### Méthodes à utiliser :
+
+- `el.addEventListener('click', () => {})`
+- `el.style.backgroundImage`
+
+## 3. Insérer la grille des dégradés dans la page
 
 Nous allons créer avec JavaScipt une structure html comme ceci :
 
@@ -62,9 +74,9 @@ Méthodes à utiliser :
 - `document.createElement()`
 - `el.classList.add('class1', 'class2', 'class3')`
 - `el.innerHTML`
-- `el.appendChild(childEl)`
+- `el.append(childEl)`
 
-4. Activer l'élément select
+### 4. Activer l'élément select
 
 ```javascript
 // tagFilter <- variable égale a tag par lequel on va filter
@@ -74,15 +86,23 @@ function activateSelectByTag() {
   // parcourir la liste des tags (for of)
   //    crée un élément option
   //    avec le texte qui est égale au tag
-  //    avec la valeur de "value" égale au tag (event.currentTarget.value)
+  //    avec la valeur de "value" égale au tag
   //    attache l'option à la fin de selectEl
   // selectEl devrait réagir à l'action de utilisateur qui choisi une nouvelle valeur (change)
-  // affecter la value d'option choisi par utilisateur à tagFilter
+  // affecter la value d'option choisi par utilisateur à tagFilter. On a accès à cette inforamtion via event.currentTarget.value
   // appelle insertGradients() pour réinserer les gradients
 }
 ```
 
-5. Refactoring de la function `insertGradients`
+### Méthodes à utiliser :
+
+- `document.createElement()`
+- `el.textContent`,
+- `el.value`,
+- `el.append(childEl)`
+- `el.addEventListener('change', (event) => {})`
+
+### 5. Refactoring de la function `insertGradients`
 
 ```javascript
 function insertGradients() {
@@ -95,3 +115,7 @@ function insertGradients() {
   // attache ulEl à la fin de gridEl
 }
 ```
+
+### Méthodes à utiliser :
+
+- `gradients.filter()`
