@@ -32,7 +32,7 @@ function addRandomGradientBg() {
 }
 
 addRandomGradientBg() // execute la fontion une fois quand le script charge
-switchGradientButton.addEventListener("click", addRandomGradientBg) // execute la fonction en click
+gradientBtn.addEventListener("click", addRandomGradientBg) // execute la fonction en click
 ```
 
 ### Méthodes à utiliser :
