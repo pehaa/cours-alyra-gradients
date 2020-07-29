@@ -85,7 +85,7 @@ function activateFilterByTag() {
   // tags <- liste des tags uniques dans l'order alphabétique
   // parcourir la liste des tags (for of)
   //    crée un élément option
-  //    avec le texte qui est égale au tag
+  //    avec le texte qui est égal au tag
   //    avec la valeur de "value" égale au tag
   //    attache l'option à la fin de selectEl
   // selectEl devrait réagir à l'action de utilisateur qui choisi une nouvelle valeur (change)
