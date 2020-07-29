@@ -56,7 +56,7 @@ Nous allons créer avec JavaScript une structure html comme ceci :
 </ul>
 ```
 
-toutes les '...' doivent être remplacés par les valeurs dynamiques
+les '...' doivent être remplacés par les valeurs dynamiques
 
 ```javascript
 // gridEl
@@ -80,7 +80,7 @@ Méthodes à utiliser :
 
 ```javascript
 // tagFilter <- variable égale a tag par lequel on va filter
-function activateSelectByTag() {
+function activateFilterByTag() {
   // selectEl <- élément du dom avec l'id filtertags
   // tags <- liste des tags uniques dans l'order alphabétique
   // parcourir la liste des tags (for of)
