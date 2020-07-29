@@ -42,7 +42,7 @@ gradientBtn.addEventListener("click", addRandomGradientBg) // execute la fonctio
 
 ## 3. Insérer la grille des dégradés dans la page
 
-Nous allons créer avec JavaScipt une structure html comme ceci :
+Nous allons créer avec JavaScript une structure html comme ceci :
 
 ```html
 <ul class="row list-unstyled">
