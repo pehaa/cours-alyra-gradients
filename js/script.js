@@ -5,7 +5,6 @@ const headerEl = document.getElementById("page-header")
 const gradientBtn = document.getElementById("header-button")
 let filterTag = "toutes les couleurs"
 
-// funtions
 function addRandomGradientBg() {
   if (headerEl) {
     const random = Math.floor(gradients.length * Math.random())
@@ -15,7 +14,6 @@ function addRandomGradientBg() {
   }
 }
 
-// app
 if (introParagraph) {
   introParagraph.textContent = `Voici une collection de ${gradients.length} dégradés prêts à utiliser dans vos feuilles de styles`
 }
