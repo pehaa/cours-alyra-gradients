@@ -170,3 +170,4 @@ function allTags(list) {
 }
 
 const uniqueTags = allTags(gradients)
+console.log("173 - uniqueTags", uniqueTags)
